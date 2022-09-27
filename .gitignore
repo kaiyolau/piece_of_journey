@@ -148,4 +148,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+/config/initializers/api_keys.rb
+
+/config/initializers/github_api_keys.rb
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,ruby,react
