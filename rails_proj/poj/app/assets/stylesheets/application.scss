@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+
+   @import 'bootstrap';
+   @import "selectize";
+   @import "selectize.bootstrap3";
+   body {
+    background-image: url(https://storage.googleapis.com/indie-hackers.appspot.com/post-images/cd20176c88/7z8wW0AB6GOD4xKyOYSc6LgOCF52/b3e96b10-a73f-1232-672f-dde3e8ce4203.jpg);
+      }
+
