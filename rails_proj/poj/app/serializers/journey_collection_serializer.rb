@@ -1,3 +1,3 @@
 class JourneyCollectionSerializer < ActiveModel::Serializer
-  attributes :id, :title
+  attributes :id, :title, :body, :created_at
 end

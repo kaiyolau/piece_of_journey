@@ -53,7 +53,7 @@ class Api::V1::JourneysController < Api::ApplicationController
     private
 
     def journey_params
-      params.require(:journey).permit(:title, :body, :tag_names, :location, :latitude, :longitude, :image)
+      params.require(:journey).permit(:title, :body, :tag_names, :location, :latitude, :longitude, :images, :weather)
     end
 
 
