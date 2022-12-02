@@ -22,6 +22,7 @@ class Journey < ApplicationRecord
 
   validates :title, presence: { message: "Title must be provided" }, uniqueness: true, length: { minimum: 2, maximum: 200, too_short: "Title must be 2 characters minimum." }
   validates :body, presence: { message: "Body must be provided" }, uniqueness: {message: "please provide a unique content"}
+  # validates :weather, presence: { message: "Body must be provided" }
 
 
   #-------------ADD CUSTOM TAG METHODS TO GET OR SET TAGS WITH SELECTIZE---------------->

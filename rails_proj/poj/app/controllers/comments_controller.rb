@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     if @comment.save
       # CommentMailer.hello_world.deliver_now
       # CommentMailer.new_comment(@comment).deliver_now
-      CommentMailer.new_comment(@comment).deliver_later
+      # CommentMailer.new_comment(@comment).deliver_later
       # CommentMailer.delay(run_at: 30.seconds.from_now).new_comment(@comment)
       redirect_to journey_path(@journey), notice: "comment created!"
       # if saved successfully then redirect to the show page of the journey

@@ -1,5 +1,5 @@
 class JourneySerializer < ActiveModel::Serializer
-  attributes :id, :title, :body, :created_at, :updated_at, :location, :latitude, :longitude, :tag_names
+  attributes :id, :title, :body, :created_at, :updated_at, :address, :latitude, :longitude, :tag_names, :weather
 
   #customized method:
     #rename user to author to make it more understandable for the person requesting data from our api
@@ -31,6 +31,21 @@ class JourneySerializer < ActiveModel::Serializer
   class UserSerializer < ActiveModel::Serializer
     #We can rename the association with "key" in the serialized output
     attributes :id, :first_name, :last_name, :full_name
+  end
+
+  class LikeSerializer < ActiveModel::Serializer
+    #We can rename the association with "key" in the serialized output
+    attributes :id, :user_id, :journey_id
+  end
+
+  class TaggingSerializer < ActiveModel::Serializer
+    attributes :id, :journey_id, :tag_id
+
+    # #customized method:
+    # #rename user to author to make it more understandable for the person requesting data from our api
+    def author_full_name
+      object.user&.full_name
+    end
   end
 
 end

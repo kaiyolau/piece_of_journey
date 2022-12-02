@@ -23,7 +23,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :journeys, only: [:index, :show, :create, :update, :destroy]
       resource :session, only: [:create, :destroy]
-      resources :users,  only: [:create, :destroy]
+      resources :users, only: [:create] do
+        #get('users/current', {to: 'users#current'})
+        #default api/v1/users/:id/current
+        get :current, on: :collection #api/v1/users/current because <current> action is custom path so we need to use this
+      end
     end
     resources :gifts, only: [:create]
   end
